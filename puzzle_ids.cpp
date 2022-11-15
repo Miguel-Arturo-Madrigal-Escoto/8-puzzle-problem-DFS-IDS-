@@ -241,7 +241,34 @@ void ids(state start, state target){
 
 int main()
 {
+	//? Caso estado inicial aleatorio:
+	srand(time(0));
 
+	map<int,bool> generated;
+	state start(3, vector<int>(3,-1));
+	pair<int,int> pos_blank;
+
+	state target = {
+					{1,4,3},
+					{7,6,2},
+					{5,8,-1}
+				   };
+
+	fore(i,0,3){
+		fore(j,0,3){
+			int n = (rand() % 9) + 1;
+			while (generated[n]) n = (rand() % 9) + 1;	
+			generated[n] = true;	
+
+			// Ubicar el 9 para poner el blank
+			if (n == 9) pos_blank = make_pair(i,j);
+			start[i][j] = n;
+		}
+	}
+
+	start[pos_blank.f][pos_blank.s] = -1;
+
+	
 	//? Caso 1:
 	// state start = {
 	// 				{1,4,3},
@@ -255,22 +282,19 @@ int main()
 	// 			   };
 
 	//? Caso 2:
-	state start = {
-					{1,2,3},
-					{8,-1,4},
-					{7,6,5}
-				  };
-	state target = {
-					{1,2,3},
-					{8,4,5},
-					{7,-1,6}
-				   };
+	// state start = {
+	// 				{1,2,3},
+	// 				{8,-1,4},
+	// 				{7,6,5}
+	// 			  };
+	// state target = {
+	// 				{1,2,3},
+	// 				{8,4,5},
+	// 				{7,-1,6}
+	// 			   };
 
-
-	cout << "IDS (Iterative Deeping Search)" << ENDL;
+	cout << "BFS (Breath First Search)" << ENDL;
 	ids(start, target);
 
 	system("pause");
-
-	return 0;
 }
