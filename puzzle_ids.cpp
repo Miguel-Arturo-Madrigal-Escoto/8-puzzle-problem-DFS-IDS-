@@ -293,7 +293,7 @@ int main()
 	// 				{7,-1,6}
 	// 			   };
 
-	cout << "BFS (Breath First Search)" << ENDL;
+	cout << "IDS (Iterative Deepening Search)" << ENDL;
 	ids(start, target);
 
 	system("pause");

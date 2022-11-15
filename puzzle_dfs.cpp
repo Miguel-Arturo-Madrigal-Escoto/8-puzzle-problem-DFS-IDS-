@@ -274,7 +274,7 @@ int main()
 	// 				{7,-1,6}
 	// 			   };
 
-	cout << "BFS (Breath First Search)" << ENDL;
+	cout << "DFS (Depth First Search)" << ENDL;
 	dfs(start, target);
 
 	system("pause");
