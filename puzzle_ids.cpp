@@ -270,5 +270,7 @@ int main()
 	cout << "IDS (Iterative Deeping Search)" << ENDL;
 	ids(start, target);
 
+	system("pause");
+
 	return 0;
 }

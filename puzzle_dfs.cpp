@@ -253,5 +253,7 @@ int main()
 	cout << "DFS (Depth First Search)" << ENDL;
 	dfs(start, target);
 
+	system("pause");
+
 	return 0;
 }
